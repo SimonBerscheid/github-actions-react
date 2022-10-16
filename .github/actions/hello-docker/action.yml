@@ -1,0 +1,20 @@
+name: Hello World
+author: Simon
+description: Hello World Action
+inputs:
+  who-to-greet:
+    description: Who to greet
+    required: true
+    default: World
+outputs:
+  time:
+    description: The greeting time
+runs:
+  using: docker
+  image: Dockerfile
+#  entrypoint:
+  args:
+    - ${{ inputs.who-to-greet }}
+  env:
+    key: value
+    key2: value2

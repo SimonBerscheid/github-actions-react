@@ -35,7 +35,7 @@ jobs:
           assignees: SimonBerscheid
       - name: Hello World Action
         id: hello
-        uses: ./.github/actions/hello
+        uses: ./.github/actions/hello-docker
         with:
           who-to-greet: Simon
       - name: Output Hello World and Issue
