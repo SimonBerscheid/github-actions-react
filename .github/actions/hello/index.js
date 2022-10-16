@@ -12,6 +12,6 @@ try {
     // console.log(JSON.stringify(github, null, '\t'));
 } catch (error) {
     console.log(error)
-    core.setFailed('function failed when called this')
+    core.setFailed(error)
 }
 
