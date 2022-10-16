@@ -34,3 +34,4 @@ jobs:
       - name: Output Hello Output
         run: |
           echo "Time: ${{ steps.hello.outputs.time }}"
+          echo $HELLO
