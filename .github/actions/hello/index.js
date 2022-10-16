@@ -9,7 +9,7 @@ try {
     const time = new Date();
     core.setOutput("time", time.toTimeString());
 
-    // console.log(JSON.stringify(github, null, '\t'));
+    console.log(JSON.stringify(github, null, '\t'));
 } catch (error) {
     console.log(error)
     core.setFailed(error)
