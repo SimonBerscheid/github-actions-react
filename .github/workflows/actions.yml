@@ -1,0 +1,18 @@
+name: Testing Actions
+
+on: push
+
+jobs:
+  testing-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Hello World Action
+        id: hello
+        uses: ./.github/actions/hello
+        with:
+          who-to-greet: Simon
+      - name: Output Hello Output
+        run: |
+          echo "Time: {{ steps.hello.outputs.time }}
