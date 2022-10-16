@@ -32,9 +32,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: New Custom Title
           body: Interesting Body Section of Issue
-          assignees: |
-            Tom
-            Peter
+          assignees: simon
       - name: Hello World Action
         id: hello
         uses: ./.github/actions/hello

@@ -13,7 +13,8 @@ async function createIssue() {
         const response = await octokit.rest.issues.create({
             ...github.context.repo,
             title,
-            body
+            body,
+            assignees: [assignees]
         });
 
         core.setOutput('issue', JSON.stringify(response.data));
