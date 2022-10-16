@@ -14,6 +14,6 @@ echo "some stuff"
 echo "some stuff"
 echo "some stuff"
 echo "some stuff"
-echo "::endroup::"
+echo "::endgroup::"
 
-echo "::set-env name=HELLO::hello"
+echo "HELLO=hello" >> $GITHUB_ENV
