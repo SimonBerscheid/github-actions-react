@@ -2,6 +2,8 @@ name: CI
 on:
   pull_request:
     branches: [develop]
+  push:
+    branches: [develop]
 
 jobs:
   build:
@@ -22,3 +24,12 @@ jobs:
         run: npm test -- --coverage
         env:
           CI: true
+      - name: Build Project
+        if: github.event_name == 'push'
+        run: npm run build
+      - name: Deploy to Staging
+        if: github.event_name == 'push'
+        run: npx surge --project ./build --domain barbarous123-shape.surge.sh
+        env:
+          SURGE_LOGIN: ${{ secret.SURGE_LOGIN }}
+          SURGE_TOKEN: ${{ secret.SURGE_TOKEN }}
