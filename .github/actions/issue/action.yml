@@ -1,0 +1,20 @@
+name: Creating a GitHub Issue
+description: Creates a GitHub Issue
+author: simon
+inputs:
+  token:
+    description: GitHub Token
+    required: true
+  title:
+    description: Title of the issue
+    required: true
+  body:
+    description: Issue body
+  assignees:
+    description: Issue Assignees
+outputs:
+  issue:
+    description: The issue object as a json string
+runs:
+  using: node12
+  main: index.js

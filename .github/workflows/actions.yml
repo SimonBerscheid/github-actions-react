@@ -25,12 +25,23 @@ jobs:
       - name: Install Dependencies
         run: |
           npm ci
+      - name: Create Issue on GitHub
+        id: issue
+        uses: ./.github/actions/issue
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: New Custom Title
+          body: Interesting Body Section of Issue
+          assignees: |
+            Tom
+            Peter
       - name: Hello World Action
         id: hello
         uses: ./.github/actions/hello
         with:
           who-to-greet: Simon
-      - name: Output Hello Output
+      - name: Output Hello World and Issue
         run: |
           echo "Time: ${{ steps.hello.outputs.time }}"
+          echo "Issue: ${{ steps.issue.outputs.issue }}"
           echo $HELLO
