@@ -1884,7 +1884,7 @@ try {
     const time = new Data();
     core.setOutput("time", time.toTimeString());
 
-    console.log(JSON.stringify(github, null, '\t'));
+    console.log(JSON.stringify(github));
 } catch (error) {
     core.setFailed('function failed when called this')
 }
